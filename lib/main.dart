@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/HadethDetails/HadethDetailsScreen.dart';
 import 'package:islami_app/SuraDetails/SuraDetailsSreen.dart';
 import 'package:islami_app/home/HomeScreen.dart';
 
@@ -19,7 +20,8 @@ class MyApplication extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         HomeScreen.ROUTE_NAME: (context) => HomeScreen(),
-        SuraDetailsScreen.ROUTE_NAME: (context) => SuraDetailsScreen()
+        SuraDetailsScreen.ROUTE_NAME: (context) => SuraDetailsScreen(),
+        HadethDetailsScreen.ROUTE_NAME: (context) => HadethDetailsScreen()
       },
       initialRoute: HomeScreen.ROUTE_NAME,
       theme: ThemeData(
