@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/Widgets/AppBarWidget.dart';
 import 'package:islami_app/main.dart';
 import 'dart:math' as Math;
 
@@ -15,69 +16,76 @@ class _TasbehFragmentState extends State<TasbehFragment> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: double.infinity,
-          child: Stack(
-            alignment: AlignmentDirectional.topCenter,
-            children: [
-              Column(
-                children: [
-                  SizedBox(
-                    height: 70,
-                  ),
-                  InkWell(
-                    onTap: onSebhaPressed,
-                    child: Transform.rotate(
-                      angle: Math.pi / 180 * angle,
-                      child: Container(
-                        child: Image(
-                          image: AssetImage('assets/images/body_of_sebha.png'),
-                          height: 190,
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      appBar: AppBarWidget('Tasabeh'),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            child: Stack(
+              alignment: AlignmentDirectional.topCenter,
+              children: [
+                Column(
+                  children: [
+                    SizedBox(
+                      height: 70,
+                    ),
+                    InkWell(
+                      onTap: onSebhaPressed,
+                      child: Transform.rotate(
+                        angle: Math.pi / 180 * angle,
+                        child: Container(
+                          child: Image(
+                            image:
+                                AssetImage('assets/images/body_of_sebha.png'),
+                            height: 190,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Container(
-                  margin: EdgeInsets.only(left: 55),
-                  child: Image(
-                      image: AssetImage('assets/images/head_of_sebha.png'))),
-            ],
+                  ],
+                ),
+                Container(
+                    margin: EdgeInsets.only(left: 55),
+                    child: Image(
+                        image: AssetImage('assets/images/head_of_sebha.png'))),
+              ],
+            ),
           ),
-        ),
-        Container(
-          margin: EdgeInsets.only(top: 20, bottom: 20),
-          child: Text(
-            'عدد التسبيحات',
-            style: TextStyle(fontSize: 25, color: MyThemeData.colorAccent),
+          Container(
+            margin: EdgeInsets.only(top: 20, bottom: 20),
+            child: Text(
+              'عدد التسبيحات',
+              style: TextStyle(fontSize: 25, color: MyThemeData.colorAccent),
+            ),
           ),
-        ),
-        Container(
-          decoration: BoxDecoration(
-              color: Color.fromRGBO(200, 179, 150, 1.0),
-              borderRadius: BorderRadius.all(Radius.circular(30))),
-          padding: EdgeInsets.all(24),
-          child: Text(
-            '$counter',
-            style: TextStyle(fontSize: 25),
+          Container(
+            decoration: BoxDecoration(
+                color: Color.fromRGBO(200, 179, 150, 1.0),
+                borderRadius: BorderRadius.all(Radius.circular(30))),
+            padding: EdgeInsets.all(24),
+            child: Text(
+              '$counter',
+              style: TextStyle(fontSize: 25),
+            ),
           ),
-        ),
-        Container(
-          decoration: BoxDecoration(
-              color: MyThemeData.colorPrimary,
-              borderRadius: BorderRadius.all(Radius.circular(30))),
-          margin: EdgeInsets.only(top: 12),
-          padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-          child: Text(
-            tasbehList[currentTasbeh],
-            style: TextStyle(
-                fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
+          Container(
+            decoration: BoxDecoration(
+                color: MyThemeData.colorPrimary,
+                borderRadius: BorderRadius.all(Radius.circular(30))),
+            margin: EdgeInsets.only(top: 12),
+            padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+            child: Text(
+              tasbehList[currentTasbeh],
+              style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

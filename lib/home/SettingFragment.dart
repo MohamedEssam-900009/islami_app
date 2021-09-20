@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/Widgets/AppBarWidget.dart';
 
-class RadioFragment extends StatelessWidget {
+class SettingFragment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      appBar: AppBarWidget('Radio'),
+      appBar: AppBarWidget('Settings'),
       body: Container(
-        child: Text('Radio'),
+        child: Text('Settings'),
       ),
     );
   }

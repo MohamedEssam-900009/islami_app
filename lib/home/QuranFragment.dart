@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/Widgets/AppBarWidget.dart';
 import 'package:islami_app/Widgets/SuraNameWidget.dart';
 import 'package:islami_app/main.dart';
 
@@ -122,51 +123,55 @@ class QuranFragment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-          flex: 1,
-          child: Center(
-              child: Image(
-                  image: AssetImage('assets/images/quran_screen_logo.png'))),
-        ),
-        SizedBox(
-          height: 8,
-        ),
-        Expanded(
-          flex: 3,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          color: MyThemeData.colorPrimary, width: 2)),
-                  child: Text(
-                    'Sura name',
-                    style: TextStyle(fontSize: 24),
-                    textAlign: TextAlign.center,
-                  )),
-              Expanded(
-                child: ListView.separated(
-                  itemBuilder: (context, index) {
-                    return SuraNameWidget(names[index], index + 1);
-                  },
-                  itemCount: names.length,
-                  separatorBuilder: (context, index) {
-                    return Container(
-                      height: 1,
-                      color: MyThemeData.colorPrimary,
-                      margin: EdgeInsets.symmetric(horizontal: 12),
-                    );
-                  },
-                ),
-              )
-            ],
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      appBar: AppBarWidget('Quran'),
+      body: Column(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Center(
+                child: Image(
+                    image: AssetImage('assets/images/quran_screen_logo.png'))),
           ),
-        ),
-      ],
+          SizedBox(
+            height: 8,
+          ),
+          Expanded(
+            flex: 3,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: MyThemeData.colorPrimary, width: 2)),
+                    child: Text(
+                      'Sura name',
+                      style: TextStyle(fontSize: 24),
+                      textAlign: TextAlign.center,
+                    )),
+                Expanded(
+                  child: ListView.separated(
+                    itemBuilder: (context, index) {
+                      return SuraNameWidget(names[index], index + 1);
+                    },
+                    itemCount: names.length,
+                    separatorBuilder: (context, index) {
+                      return Container(
+                        height: 1,
+                        color: MyThemeData.colorPrimary,
+                        margin: EdgeInsets.symmetric(horizontal: 12),
+                      );
+                    },
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

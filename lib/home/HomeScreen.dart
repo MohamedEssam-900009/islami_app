@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/home/HadethFragment.dart';
 import 'package:islami_app/home/QuranFragment.dart';
 import 'package:islami_app/home/RadioFragment.dart';
+import 'package:islami_app/home/SettingFragment.dart';
 import 'package:islami_app/home/TasbehFragment.dart';
 import 'package:islami_app/main.dart';
 
@@ -25,15 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 image: AssetImage('assets/images/default_bg.png'))),
         child: Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            title: Text(
-              'Islami',
-              style: TextStyle(color: MyThemeData.colorAccent),
-            ),
-            centerTitle: true,
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-          ),
           body: getMainView(),
           bottomNavigationBar: Theme(
             data: Theme.of(context)
@@ -61,6 +53,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   BottomNavigationBarItem(
                       icon: ImageIcon(AssetImage('assets/images/ic_radio.png')),
                       label: 'Radio'),
+                  BottomNavigationBarItem(
+                      icon: ImageIcon(
+                          AssetImage('assets/images/ic_settings.png')),
+                      label: 'Setting'),
                 ]),
           ),
         ),
@@ -77,6 +73,8 @@ class _HomeScreenState extends State<HomeScreen> {
       return TasbehFragment();
     } else if (selectedIndex == 3) {
       return RadioFragment();
+    } else if (selectedIndex == 4) {
+      return SettingFragment();
     }
   }
 

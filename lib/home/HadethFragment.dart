@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_app/Widgets/AppBarWidget.dart';
 import 'package:islami_app/Widgets/HadethTitleWidget.dart';
 
 import '../main.dart';
@@ -19,29 +20,33 @@ class _HadethFragmentState extends State<HadethFragment> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-            flex: 1,
-            child: Image(image: AssetImage('assets/images/hadeth_logo.png'))),
-        Expanded(
-            flex: 3,
-            child: hadethList.length == 0
-                ? Center(child: CircularProgressIndicator())
-                : ListView.separated(
-                    itemBuilder: (context, index) {
-                      return HadethTitleWidget(hadethList[index]);
-                    },
-                    itemCount: hadethList.length,
-                    separatorBuilder: (context, index) {
-                      return Container(
-                        height: 1,
-                        color: MyThemeData.colorPrimary,
-                        margin: EdgeInsets.symmetric(horizontal: 12),
-                      );
-                    },
-                  )),
-      ],
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      appBar: AppBarWidget('Ahadeth'),
+      body: Column(
+        children: [
+          Expanded(
+              flex: 1,
+              child: Image(image: AssetImage('assets/images/hadeth_logo.png'))),
+          Expanded(
+              flex: 3,
+              child: hadethList.length == 0
+                  ? Center(child: CircularProgressIndicator())
+                  : ListView.separated(
+                      itemBuilder: (context, index) {
+                        return HadethTitleWidget(hadethList[index]);
+                      },
+                      itemCount: hadethList.length,
+                      separatorBuilder: (context, index) {
+                        return Container(
+                          height: 1,
+                          color: MyThemeData.colorPrimary,
+                          margin: EdgeInsets.symmetric(horizontal: 12),
+                        );
+                      },
+                    )),
+        ],
+      ),
     );
   }
 
