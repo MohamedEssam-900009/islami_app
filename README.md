@@ -14,9 +14,7 @@ A Flutter App that allow Users to read Quran, Ahadeth and listen to Quran Radio 
 
 ## Video
 
-<table>
 https://user-images.githubusercontent.com/77198018/156657709-fcb2fefc-593a-44c2-9867-235e6fc56e12.mp4
- </table>
 
 ## Screenshoots
 
