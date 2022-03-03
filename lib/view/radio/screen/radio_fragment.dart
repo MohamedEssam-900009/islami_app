@@ -83,7 +83,10 @@ class _RadioFragmentState extends State<RadioFragment> {
         .get(Uri.parse('http://api.mp3quran.net/radios/radio_arabic.json'));
     if (response.statusCode == 200) {
       return RadioResponse.fromJson(
-          jsonDecode(utf8.decode(response.bodyBytes)));
+        jsonDecode(
+          utf8.decode(response.bodyBytes),
+        ),
+      );
     } else {
       throw Exception(response.body);
     }
