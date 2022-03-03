@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/home/HadethFragment.dart';
+import 'package:islami_app/view/hadeth/screen/hadeth_fragment.dart';
 
-import '../main.dart';
+import '../../../main.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
-  static final String ROUTE_NAME = 'hadeth_details';
+  static final String routeName = 'hadeth_details';
 
   @override
   Widget build(BuildContext context) {
@@ -27,27 +27,29 @@ class HadethDetailsScreen extends StatelessWidget {
             iconTheme: IconThemeData(color: MyThemeData.colorAccent),
           ),
           backgroundColor: Colors.transparent,
-          body: Stack(children: [
-            Container(
-              margin: EdgeInsets.only(top: 25, right: 14, left: 14),
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(248, 248, 248, .7),
-                  borderRadius: BorderRadius.circular(8)),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 25, right: 14, left: 14),
-              padding: const EdgeInsets.all(8.0),
-              child: SingleChildScrollView(
-                child: Text(
-                  hadethArgs.content,
-                  textDirection: TextDirection.rtl,
-                  style: TextStyle(
-                    fontSize: 24,
+          body: Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 25, right: 14, left: 14),
+                decoration: BoxDecoration(
+                    color: Color.fromRGBO(248, 248, 248, .7),
+                    borderRadius: BorderRadius.circular(8)),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 25, right: 14, left: 14),
+                padding: const EdgeInsets.all(8.0),
+                child: SingleChildScrollView(
+                  child: Text(
+                    hadethArgs.content,
+                    textDirection: TextDirection.rtl,
+                    style: TextStyle(
+                      fontSize: 24,
+                    ),
                   ),
                 ),
-              ),
-            )
-          ]),
+              )
+            ],
+          ),
         ),
       ),
     );

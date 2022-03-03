@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/HadethDetails/HadethDetailsScreen.dart';
-import 'package:islami_app/SuraDetails/SuraDetailsSreen.dart';
-import 'package:islami_app/home/HadethFragment.dart';
+import 'package:islami_app/view/hadeth/screen/hadeth_details_screen.dart';
+import 'package:islami_app/view/hadeth/screen/hadeth_fragment.dart';
 
+
+// ignore: must_be_immutable
 class HadethTitleWidget extends StatelessWidget {
   Hadeth hadeth;
 
@@ -13,7 +14,7 @@ class HadethTitleWidget extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.of(context)
-            .pushNamed(HadethDetailsScreen.ROUTE_NAME, arguments: hadeth);
+            .pushNamed(HadethDetailsScreen.routeName, arguments: hadeth);
       },
       child: Center(
         child: Text(

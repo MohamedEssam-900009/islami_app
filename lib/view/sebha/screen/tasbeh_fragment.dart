@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/Widgets/AppBarWidget.dart';
+import 'package:islami_app/Widgets/app_bar_widget.dart';
 import 'package:islami_app/main.dart';
 import 'dart:math' as Math;
 
@@ -18,7 +18,7 @@ class _TasbehFragmentState extends State<TasbehFragment> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      appBar: AppBarWidget('Tasabeh'),
+      appBar: appBarWidget('Tasabeh'),
       body: Column(
         children: [
           Container(
@@ -90,16 +90,18 @@ class _TasbehFragmentState extends State<TasbehFragment> {
   }
 
   void onSebhaPressed() {
-    setState(() {
-      counter++;
-      angle += 20;
-      if (counter % 33 == 0) {
-        counter = 0;
-        if (currentTasbeh == 2) {
-          currentTasbeh = 0;
-        } else
-          currentTasbeh += 1;
-      }
-    });
+    setState(
+      () {
+        counter++;
+        angle += 20;
+        if (counter % 33 == 0) {
+          counter = 0;
+          if (currentTasbeh == 2) {
+            currentTasbeh = 0;
+          } else
+            currentTasbeh += 1;
+        }
+      },
+    );
   }
 }

@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_app/SuraDetails/AyaItem.dart';
+
 import 'package:islami_app/main.dart';
+import 'package:islami_app/view/quran/widgets/aya_item.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
-  static final String ROUTE_NAME = 'sura_details';
+  static final String routeName = 'sura_details';
 
   @override
   _SuraDetailsScreenState createState() => _SuraDetailsScreenState();

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_app/Widgets/AppBarWidget.dart';
-import 'package:islami_app/Widgets/HadethTitleWidget.dart';
+import 'package:islami_app/view/hadeth/widgets/hadeth_title_widget.dart';
+import 'package:islami_app/widgets/app_bar_widget.dart';
 
-import '../main.dart';
+import '../../../main.dart';
 
 class HadethFragment extends StatefulWidget {
   @override
@@ -13,7 +13,6 @@ class HadethFragment extends StatefulWidget {
 class _HadethFragmentState extends State<HadethFragment> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     loadHadethFile();
   }
@@ -22,7 +21,7 @@ class _HadethFragmentState extends State<HadethFragment> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      appBar: AppBarWidget('Ahadeth'),
+      appBar: appBarWidget('Ahadeth'),
       body: Column(
         children: [
           Expanded(

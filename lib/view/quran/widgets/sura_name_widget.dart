@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/SuraDetails/SuraDetailsSreen.dart';
+import 'package:islami_app/view/quran/widgets/sura_details_sreen.dart';
 
+// ignore: must_be_immutable
 class SuraNameWidget extends StatelessWidget {
   String suraName;
   int position;
@@ -24,7 +25,7 @@ class SuraNameWidget extends StatelessWidget {
 
   void onItemClick(BuildContext context) {
     //navigate to another screen
-    Navigator.of(context).pushNamed(SuraDetailsScreen.ROUTE_NAME,
+    Navigator.of(context).pushNamed(SuraDetailsScreen.routeName,
         arguments: SuraDetailsArgs(filePos: position, suraName: suraName));
   }
 }
