@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget getMainView() {
+  Widget? getMainView() {
     if (selectedIndex == 0) {
       return QuranFragment();
     } else if (selectedIndex == 1) {

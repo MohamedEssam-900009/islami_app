@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/Widgets/app_bar_widget.dart';
 import 'package:islami_app/main.dart';
 import 'dart:math' as Math;
+
+import 'package:islami_app/widgets/app_bar_widget.dart';
 
 class TasbehFragment extends StatefulWidget {
   @override

@@ -75,8 +75,8 @@ class _HadethFragmentState extends State<HadethFragment> {
 }
 
 class Hadeth {
-  String title;
-  String content;
+  late String title;
+  late String content;
 
-  Hadeth({this.title, this.content});
+  Hadeth({required this.title, required this.content});
 }

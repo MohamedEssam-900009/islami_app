@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/main.dart';
 
-Widget appBarWidget(String text) {
+ appBarWidget(String text) {
   return AppBar(
     title: Text(
       text,

@@ -1,6 +1,6 @@
 class RadioResponse {
   RadioResponse({
-      this.radios,});
+      required this.radios,});
 
   RadioResponse.fromJson(dynamic json) {
     if (json['radios'] != null) {
@@ -10,7 +10,7 @@ class RadioResponse {
       });
     }
   }
-  List<Radios> radios;
+  late List<Radios> radios;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -27,15 +27,15 @@ class RadioResponse {
 
 class Radios {
   Radios({
-      this.name, 
-      this.radioUrl,});
+      required this.name, 
+      required this.radioUrl,});
 
   Radios.fromJson(dynamic json) {
     name = json['name'];
     radioUrl = json['radio_url'];
   }
-  String name;
-  String radioUrl;
+  late String name;
+  late String radioUrl;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

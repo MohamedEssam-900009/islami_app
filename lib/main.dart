@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/view/hadeth/screen/hadeth_details_screen.dart';
 import 'package:islami_app/view/home/home_screen.dart';
 import 'package:islami_app/view/quran/widgets/sura_details_sreen.dart';
+import 'package:islami_app/view/radio/screen/radio_fragment.dart';
 
 void main() {
   runApp(MyApplication());
@@ -22,6 +23,7 @@ class MyApplication extends StatelessWidget {
         HomeScreen.routeName: (context) => HomeScreen(),
         SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
         HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
+        RadioFragment.routeName:(context)=>RadioFragment()
       
       },
       initialRoute: HomeScreen.routeName,

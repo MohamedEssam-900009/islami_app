@@ -14,7 +14,7 @@ class SuraDetailsScreen extends StatefulWidget {
 class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   @override
   Widget build(BuildContext context) {
-    var args = ModalRoute.of(context).settings.arguments as SuraDetailsArgs;
+    var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsArgs;
     readSuraContent('assets/content/${args.filePos}.txt');
     return Container(
       decoration: BoxDecoration(
@@ -77,8 +77,11 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 }
 
 class SuraDetailsArgs {
-  int filePos;
-  String suraName;
+  late int filePos;
+  late String suraName;
 
-  SuraDetailsArgs({this.filePos, this.suraName});
+  SuraDetailsArgs({
+    required this.filePos,
+    required this.suraName,
+  });
 }

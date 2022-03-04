@@ -4,9 +4,9 @@ import 'package:islami_app/models/radio_response.dart';
 
 // ignore: must_be_immutable
 class RadioItem extends StatefulWidget {
-  Radios item;
-  Function play, stop;
-  RadioItem({Key key, this.item, this.play, this.stop}) : super(key: key);
+  late Radios item;
+  late Function play, stop;
+  RadioItem({Key? key,required this.item,required this.play,required this.stop}) : super(key: key);
 
   @override
   State<RadioItem> createState() => _RadioItemState();

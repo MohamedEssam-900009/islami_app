@@ -8,13 +8,15 @@ import 'package:islami_app/view/radio/widgets/radio_item_widget.dart';
 import 'package:islami_app/widgets/app_bar_widget.dart';
 
 class RadioFragment extends StatefulWidget {
+  static final routeName = 'radio';
+
   @override
   State<RadioFragment> createState() => _RadioFragmentState();
 }
 
 class _RadioFragmentState extends State<RadioFragment> {
-  Future<RadioResponse> radioResponse;
-  AudioPlayer audioPlayer;
+  Future<RadioResponse>? radioResponse;
+  late AudioPlayer audioPlayer;
 
   @override
   void initState() {
@@ -45,10 +47,10 @@ class _RadioFragmentState extends State<RadioFragment> {
                 child: ListView.builder(
                   physics: PageScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  itemCount: snapShot.data.radios.length,
+                  itemCount: snapShot.data?.radios.length,
                   itemBuilder: (context, index) {
                     return RadioItem(
-                      item: snapShot.data.radios[index],
+                      item: snapShot.data!.radios[index],
                       play: play,
                       stop: stop,
                     );
